@@ -16,8 +16,8 @@ int main(int argc, char** argv){
     //Read .wav file, and will set myPointer to the data
     size_t size = read_file(argv[1], &myPointer);
 	if(size == 0){
-		perror("Read failed");
-		return 1;
+	    perror("Read failed");
+	    return 1;
 	}
     wav_file* myWav;
 
@@ -56,16 +56,16 @@ int main(int argc, char** argv){
 
     //Store the info from .wav  Will not be changed.
     for(int i = 0; i < 44; ++i){
-		*(reversed + i) = *(myPointer + i);
+	*(reversed + i) = *(myPointer + i);
     }
     int j = 44;	
 
     //Now, reverse the .wav
     for(int i = size-1; i > 43; i-=2){
         *(reversed + j) = *(myPointer + i - 1);
-		j++;
-		*(reversed + j) = *(myPointer + i);
-		j++;
+	j++;
+	*(reversed + j) = *(myPointer + i);
+	j++;
     }
 
     //Create the new file from 2nd argument
