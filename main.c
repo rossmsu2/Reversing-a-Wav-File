@@ -4,7 +4,7 @@
 #include "file.h"
 
 //Written by Gary Gritters and Ross Kuiper
-//Last edit 02/03/2020
+//Last edit 02/05/2020
 //Code to reverse a .wav file so it can be played in reverse
 
 //# of arguments, and the arguments
