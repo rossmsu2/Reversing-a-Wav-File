@@ -29,20 +29,20 @@ size_t read_file(char* filename, char **buffer){
 	
 	//check if malloc worked
 	if(buffer == NULL){
-		perror("Initial buffer malloc failed");
-		return 0;
+	    perror("Initial buffer malloc failed");
+	    return 0;
 	}
 
     //Read the file into buffer.
     //Remember, buffer is a pointer to myPointer. This will
     //remalloc myPointer to be a pointer to the data from the .wav file
-	size_t newSize;
+    size_t newSize;
     newSize = fread(*buffer, 1, size, fp);
 
 	//If read has error
 	if(newSize != size){
-		perror("Read failed");
-		return 0;
+	    perror("Read failed");
+	    return 0;
 	}
 
     //Close it, we don't need it anymore.
@@ -61,13 +61,13 @@ size_t write_file(char* filename, char* buffer, size_t size){
     fp = fopen(filename, "w");
 
     //Change the file with the new data
-	size_t newSize;
+    size_t newSize;
     newSize = fwrite(buffer, 1, size, fp);
 
 	//If write has error
 	if(newSize != size){
-		perror("Write failed");
-		return 0;
+	    perror("Write failed");
+	    return 0;
 	}
 
     //Saves the new data to the file.
