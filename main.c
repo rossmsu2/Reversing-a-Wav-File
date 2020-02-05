@@ -50,8 +50,8 @@ int main(int argc, char** argv){
     //Set up pointer to reverse the .wav
     char* reversed = malloc(size);
 	if(reversed == NULL){
-		perror("Reversed buffer malloc failed");
-		return 3;
+	    perror("Reversed buffer malloc failed");
+	    return 3;
 	}
 
     //Store the info from .wav  Will not be changed.
@@ -71,8 +71,8 @@ int main(int argc, char** argv){
     //Create the new file from 2nd argument
     size_t write_size = write_file(argv[2], reversed, size);
 	if(write_size != size){
-		perror("Write size and read size differ");
-		return 4;
+	    perror("Write size and read size differ");
+	    return 4;
 	}
 
     //Can't forget to free the pointers!
