@@ -14,7 +14,7 @@ size_t read_file(char* filename, char **buffer){
 
     //Open it with, "r", read only
     //Open file with name "filename",
-    //should be an argument from the commandline
+    //Should be an argument from the commandline
     fp = fopen(filename, "r");
     struct stat buf;
 
@@ -39,7 +39,7 @@ size_t read_file(char* filename, char **buffer){
 	size_t newSize;
     newSize = fread(*buffer, 1, size, fp);
 
-	//if read has error
+	//If read has error
 	if(newSize != size){
 		perror("Read failed");
 		return 0;
@@ -64,7 +64,7 @@ size_t write_file(char* filename, char* buffer, size_t size){
 	size_t newSize;
     newSize = fwrite(buffer, 1, size, fp);
 
-	//if weite has error
+	//If write has error
 	if(newSize != size){
 		perror("Write failed");
 		return 0;
