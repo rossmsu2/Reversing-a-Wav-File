@@ -4,7 +4,7 @@
 #include "file.h"
 
 //Written by Ross Kuiper and Gary Gritters
-//Last edit 02/03/2020
+//Last edit 02/05/2020
 //Use this file to read a .wav file into a pointer's memory location.
 //Also use this file to store the data from a pointer into a file. 
 size_t read_file(char* filename, char **buffer){
